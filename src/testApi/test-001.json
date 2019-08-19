@@ -1,0 +1,34 @@
+[
+  {
+    "name": "scenario1",
+    "operation": "postTransfers",
+    "body": {
+      "transferId": "5bbd31e2-7a2d-4d13-9013-3a631db62c1e",
+      "quote": {
+          "quoteId": "1cd3867e-0c1f-42f3-94a3-1483ded9703b",
+          "transactionId": "dcc552ce-d0cd-4827-b730-e4f4300617af",
+          "transferAmount": "100",
+          "transferAmountCurrency": "USD"
+      },
+      "from": {
+          "idType": "MSISDN",
+          "idValue": "123456"
+      },
+      "to": {
+          "idType": "MSISDN",
+          "idValue": "67890"
+      },
+      "amountType": "SEND",
+      "currency": "USD",
+      "amount": "100",
+      "transactionType": "TRANSFER"    
+    }
+  },
+  {
+    "name": "scenario2",
+    "operation": "putTransfers",
+    "params": {
+      "transferId": "5bbd31e2-7a2d-4d13-9013-3a631db62c1e"
+    }
+  }
+]

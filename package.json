@@ -1,0 +1,56 @@
+{
+  "name": "mojaloop-simulator",
+  "description": "A canonical test example implementation of the parties, transfers and quotes resources of the Mojaloop API",
+  "version": "7.3.0",
+  "license": "Apache-2.0",
+  "author": "ModusBox",
+  "contributors": [
+    "Georgi Georgiev <georgi.georgiev@modusbox.com",
+    "Matt Kingston <matt.kingston@modusbox.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mojaloop/mojaloop-simulator.git"
+  },
+  "bugs": "http://github.com/mojaloop/mojaloop-simulator/issues",
+  "ava": {
+    "files": [
+      "test/unit/**/*.test.js"
+    ],
+    "sources": [
+      "src/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "@internal/log": "file:src/lib/log",
+    "@internal/randomphrase": "file:src/lib/randomphrase",
+    "@internal/router": "file:src/lib/router",
+    "@internal/validate": "file:src/lib/validate",
+    "ajv": "6.10.2",
+    "chance": "1.0.18",
+    "dotenv": "8.0.0",
+    "joi": "14.3.1",
+    "json-rules-engine": "3.1.0",
+    "koa": "2.7.0",
+    "koa-body": "4.1.0",
+    "node-fetch": "2.6.0",
+    "npm-run-all": "4.1.5",
+    "sqlite": "3.0.3",
+    "yamljs": "0.3.0"
+  },
+  "devDependencies": {
+    "ava": "2.2.0",
+    "eslint": "6.1.0",
+    "nyc": "14.1.1",
+    "uuid": "3.3.2"
+  },
+  "scripts": {
+    "start": "run-p start:api",
+    "start:api": "node src/index.js",
+    "test:unit": "npx ava --verbose",
+    "test:coverage": "nyc ava",
+    "cover": "npx nyc --all report --reporter=lcov",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  }
+}

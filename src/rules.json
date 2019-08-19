@@ -1,0 +1,26 @@
+{
+	"conditions": {
+		"all": [{
+			"fact": "path",
+			"operator": "equal",
+			"value": "/transfers"
+		}, {
+			"fact": "body",
+			"operator": "greaterThanInclusive",
+			"value": 100,
+			"path": ".amount"
+		}, {
+			"fact": "body",
+			"operator": "lessThanInclusive",
+			"value": 200,
+			"path": ".amount"
+		}]
+	},
+	"event": {
+		"type": "ndc-exceeded",
+		"params": {
+			"statusCode": 500,
+			"message": {"code": 4001, "message": "Payer FSP insufficient liquidity"}
+		}
+	}
+}

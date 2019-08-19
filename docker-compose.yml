@@ -1,0 +1,16 @@
+version: '3'
+services:
+  redis:
+    image: "redis:5.0.4-alpine"
+  sim:
+    build: .
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+  scheme-adapter:
+    # image: "mojaloop-sdk-example-scheme-adapter:local-testing"
+    image: "modusbox/mojaloop-sdk-scheme-adapter:latest"
+    env_file: ./local.env
+    ports:
+      - "4000:3000"
+      - "4001:3001"
